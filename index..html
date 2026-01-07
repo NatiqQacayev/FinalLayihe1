@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Express - Sürətli Yükdaşıma Xidməti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="log">
+                <i class="fas fa-shipping-fast"></i>
+                <h1>Cargo <span>Express</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Ana səhifə</a></li>
+                    <li><a href="#services">Xidmətlər</a></li>
+                    <li><a href="#branches">Filiallar</a></li>
+                    <li><a href="#tracking">Yük izləmə</a></li>
+                    <li><a href="#contact">Əlaqə</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button id="loginBtn" class="btn-outline">Daxil ol</button>
+                    <button id="registerBtn" class="btn-primary">Qeydiyyat</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Sürətli və Etibarlı <span>Yükdaşım Xidməti</span></h2>
+                <p>Ölkə daxili və beynəlxalq yükdaşımı üçün ən sürətli və təhlükəsiz həllər. Sifarişlərinizi izləyin, filiallarımızdan yararlanın.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" id="orderNowBtn">İndi sifariş et</button>
+                    <button class="btn-outline btn-large" id="trackingHeroBtn">Yükünüzü izləyin</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cargo xidməti">
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Yeni hesab yaradın</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="fullName">Tam adınız</label>
+                        <input type="text" id="fullName" placeholder="Ad Soyad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-poçt ünvanı</label>
+                        <input type="email" id="email" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon nömrəsi</label>
+                        <input type="tel" id="phone" placeholder="+994 XX XXX XX XX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Şifrə</label>
+                        <input type="password" id="password" placeholder="Ən az 8 simvol" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Şifrəni təsdiqlə</label>
+                        <input type="password" id="confirmPassword" placeholder="Şifrəni yenidən daxil edin" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">İstifadəçi razılaşmasını və məxfilik siyasətini qəbul edirəm</label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">Qeydiyyatdan keç</button>
+                </form>
+                <div class="form-footer">
+                    <p>Artıq hesabınız var? <a href="#" id="showLoginModal">Daxil olun</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Hesabınıza daxil olun</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">E-poçt ünvanı</label>
+                        <input type="email" id="loginEmail" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Şifrə</label>
+                        <input type="password" id="loginPassword" placeholder="Şifrənizi daxil edin" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Məni xatırla</label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">Daxil ol</button>
+                </form>
+                <div class="form-footer">
+                    <p>Hesabınız yoxdur? <a href="#" id="showRegisterModal">Qeydiyyatdan keçin</a></p>
+                    <p><a href="#" class="forgot-password">Şifrəni unutmusunuz?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Xidmətlərimiz</h2>
+            <p class="section-subtitle">Sizə ən yaxşı xidməti təqdim etmək üçün daima çalışırıq</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Ölkə daxili daşıma</h3>
+                    <p>Azərbaycanın bütün regionlarına sürətli və təhlükəsiz yükdaşımı.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Beynəlxalq daşıma</h3>
+                    <p>Dünyanın 50-dən çox ölkəsinə hava və quru yolu ilə yükdaşımı.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Anbar xidməti</h3>
+                    <p>Müasir anbarlarımızda yüklərinizin saxlanılması və idarə edilməsi.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-people-carry-box"></i>
+                    </div>
+                    <h3>Qapıdan-qapıya çatdırılma</h3>
+                    <p>Yükünüzü ünvandan götürüb, təhvil ünvanına çatdırırıq.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tracking" id="tracking">
+        <div class="container">
+            <h2 class="section-title">Yükünüzü İzləyin</h2>
+            <p class="section-subtitle">Sifariş nömrənizi daxil edərək yükünüzün hazırkı statusunu öyrənin</p>
+            <div class="tracking-form">
+                <input type="text" id="trackingNumber" placeholder="Yük izləmə nömrənizi daxil edin (məs: CARGO12345)">
+                <button class="btn-primary" id="trackBtn">İzlə</button>
+            </div>
+            <div class="tracking-result" id="trackingResult">
+ 
+            </div>
+        </div>
+    </section>
+
+    <section class="branches" id="branches">
+        <div class="container">
+            <h2 class="section-title">Filiallarımız</h2>
+            <p class="section-subtitle">Azərbaycanın müxtəlif bölgələrində fəaliyyət göstəririk</p>
+            
+            <div class="branch-filter">
+                <button class="filter-btn active" data-filter="all">Hamısı</button>
+                <button class="filter-btn" data-filter="baku">Bakı</button>
+                <button class="filter-btn" data-filter="regions">Regionlar</button>
+                <button class="filter-btn" data-filter="central">Mərkəzi</button>
+            </div>
+            
+            <div class="branch-search-container">
+                <input type="text" class="branch-search" id="branchSearchInput" placeholder="Filial adı və ya ünvanı axtar...">
+            </div>
+            
+            <div class="branches-grid" id="branchesGrid">
+
+            </div>
+            
+            <div class="branch-stats">
+                <div class="stat-item">
+                    <h3 id="totalBranches">0</h3>
+                    <p>Filial sayı</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>İşçi sayı</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Onlayn dəstək</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Gündəlik yük</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Bizimlə Əlaqə</h2>
+            <p class="section-subtitle">Hər hansı sualınız və ya təklifiniz varsa, bizimlə əlaqə saxlayın</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefon</h3>
+                            <p>+994 12 310 10 10</p>
+                            <p>+994 50 310 10 10 (WhatsApp)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>E-poçt</h3>
+                            <p>info@cargoexpress.az</p>
+                            <p>support@cargoexpress.az</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Ünvan</h3>
+                            <p>Bakı, Azadlıq prospekti 123</p>
+                            <p>Biznes mərkəzi, 5-ci mərtəbə</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>İş saatları</h3>
+                            <p>Bazar ertəsi - Cümə: 08:00 - 19:00</p>
+                            <p>Şənbə: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="Adınız" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder="E-poçt ünvanınız" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contactSubject" placeholder="Mövzu" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" rows="5" placeholder="Mesajınız" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block">Mesaj göndər</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Cargo <span>Express</span></h3>
+                    </div>
+                    <p>Ölkə daxili və beynəlxalq yükdaşım xidmətləri. Sürət, təhlükəsizlik və müştəri məmnuniyyəti bizim üçün ən vacib prinsiplərdir.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Sürətli Keçidlər</h4>
+                    <ul>
+                        <li><a href="#home">Ana səhifə</a></li>
+                        <li><a href="#services">Xidmətlər</a></li>
+                        <li><a href="#branches">Filiallar</a></li>
+                        <li><a href="#tracking">Yük izləmə</a></li>
+                        <li><a href="#contact">Əlaqə</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Xidmətlərimiz</h4>
+                    <ul>
+                        <li><a href="#">Ölkə daxili daşıma</a></li>
+                        <li><a href="#">Beynəlxalq daşıma</a></li>
+                        <li><a href="#">Anbar xidməti</a></li>
+                        <li><a href="#">Qapıdan-qapıya çatdırılma</a></li>
+                        <li><a href="#">Sığorta xidməti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Əlaqə məlumatları</h4>
+                    <p><i class="fas fa-phone"></i> +994 12 310 10 10</p>
+                    <p><i class="fas fa-envelope"></i> info@cargoexpress.az</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bakı, Azadlıq prospekti 123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Cargo Express. Bütün hüquqlar qorunur. | <a href="#">Məxfilik Siyasəti</a> | <a href="#">İstifadəçi Razılaşması</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
